@@ -15,8 +15,8 @@ public class Direccion {
     private Date fechaCreacion;
     private String usuarioCreador;
     @ManyToOne
-    @JoinColumn(name = "id_cuidad", referencedColumnName = "id")
-    private Ciudad ciudad;
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
     @PostPersist
     public void postPersist() {
@@ -70,13 +70,5 @@ public class Direccion {
 
     public void setUsuarioCreador(String usuarioCreador) {
         this.usuarioCreador = usuarioCreador;
-    }
-
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
     }
 }
