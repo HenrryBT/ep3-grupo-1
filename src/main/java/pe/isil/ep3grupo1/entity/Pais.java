@@ -47,7 +47,5 @@ public class Pais {
         return usuarioCreador;
     }
 
-    public void setUsuarioCreador(String usuarioCreador) {
-        this.usuarioCreador = usuarioCreador;
-    }
+    public void setUsuarioCreador(String usuarioCreador) {this.usuarioCreador = usuarioCreador;}
 }

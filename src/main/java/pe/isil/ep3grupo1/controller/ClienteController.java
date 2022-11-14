@@ -33,7 +33,7 @@ public class ClienteController {
         clienteService.delete(id);
     }
 
-    @GetMapping({"/buscarPorEmail",""})
+    @GetMapping({"/buscarPorEmail"})
     public Cliente getClienteByEmail(@RequestParam String email){
         return clienteService.buscarClientePorEmail(email);
     }
