@@ -11,14 +11,12 @@ public class Direccion {
     private String direaccion1;
     private String direccion2;
     private String nroDireccion;
-
-    @ManyToOne
-    @JoinColumn(name = "id_ciudad")
+    @Column(name = "sk_cuidad")
     private Ciudad ciudad;
-
-    @ManyToOne
-    @JoinColumn(name = "id_pais")
+    @Column(name = "sk_pais")
     private Pais pais;
+    @OneToMany
+    @JoinColumn(name = "id_cliente")
 
     public Long getId() {
         return id;
