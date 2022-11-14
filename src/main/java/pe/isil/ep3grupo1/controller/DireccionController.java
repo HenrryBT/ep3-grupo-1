@@ -3,6 +3,7 @@ package pe.isil.ep3grupo1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.isil.ep3grupo1.entity.Direccion;
+import pe.isil.ep3grupo1.implementation.DireccionServiceImplementation;
 import pe.isil.ep3grupo1.service.DireccionService;
 
 import java.util.List;
@@ -11,25 +12,24 @@ import java.util.List;
 @RequestMapping("/direccion")
 public class DireccionController {
     @Autowired
-    private DireccionService direccionService;
+    private DireccionServiceImplementation direccionService;
 
     @GetMapping({"/getall", ""})
     public List<Direccion> getAllDireccion() {
-        return direccionService.getAll();
+        return direccionService.getAllDirecciones();
     }
 
     @PostMapping("/add")
     public void addDireccion(@RequestBody Direccion direccion) {
-        direccionService.add(direccion);
+        direccionService.addDireccion(direccion);
     }
 
     @PostMapping("/update")
     public void updateDireccion(@RequestBody Direccion direccion, @RequestParam Long id) {
-        direccionService.update(direccion, id);
+        direccionService.updateDireccion(direccion, id);
     }
-
     @DeleteMapping("/delete")
     public void deleteDireccion(@RequestParam Long id) {
-        direccionService.delete(id);
+        direccionService.deleteDireccion(id);
     }
 }
