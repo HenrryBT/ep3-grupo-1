@@ -53,7 +53,12 @@ public class ClienteServiceImplementation implements ClienteService {
         }
     }
 
-    public Cliente getClientesByEmail(String email) {
+    public Cliente getClienteByEmail(String email) {
         return clienteRepository.findClienteByEmail(email);
+    }
+
+    @Override
+    public Cliente getClienteByCiudad(String descripcion) {
+        return clienteRepository.findClienteByCiudadDescripcion(descripcion);
     }
 }
