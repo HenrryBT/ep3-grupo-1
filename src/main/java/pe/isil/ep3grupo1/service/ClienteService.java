@@ -1,8 +1,9 @@
-package pe.isil.ep3grupo1.cliente;
+package pe.isil.ep3grupo1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.isil.ep3grupo1.direccion.Direccion;
+import pe.isil.ep3grupo1.repository.ClienteRepository;
+import pe.isil.ep3grupo1.entity.Cliente;
 
 import javax.transaction.Transactional;
 import java.util.List;

@@ -1,14 +1,10 @@
-package pe.isil.ep3grupo1.direccion;
-
-import pe.isil.ep3grupo1.ciudad.Ciudad;
-import pe.isil.ep3grupo1.pais.Pais;
+package pe.isil.ep3grupo1.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_Direccion")
+@Table(name = "tbl_direccion")
 public class Direccion {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
