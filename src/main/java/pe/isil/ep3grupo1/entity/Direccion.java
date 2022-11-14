@@ -14,14 +14,13 @@ public class Direccion {
     private String nroDireccion;
     private Date fechaCreacion;
     private String usuarioCreador;
-    @ManyToOne
-    @JoinColumn(name = "id_ciudad")
+    @Column(name = "id_ciudad")
     private Ciudad ciudad;
-    @Column(name = "sk_pais")
-    private Pais pais;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_cliente")
-    
+    private Cliente cliente;
+
+    @PostPersist
     public void postPersist() {
         this.fechaCreacion = new Date();
         this.usuarioCreador = "SYS-USER";
@@ -59,6 +58,22 @@ public class Direccion {
         this.nroDireccion = nroDireccion;
     }
 
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getUsuarioCreador() {
+        return usuarioCreador;
+    }
+
+    public void setUsuarioCreador(String usuarioCreador) {
+        this.usuarioCreador = usuarioCreador;
+    }
+
     public Ciudad getCiudad() {
         return ciudad;
     }
@@ -67,19 +82,11 @@ public class Direccion {
         this.ciudad = ciudad;
     }
 
-    public Pais getPais() {
-        return pais;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
-
-    public Date getFechaCreacion() {return fechaCreacion;}
-
-    public void setFechaCreacion(Date fechaCreacion) {this.fechaCreacion = fechaCreacion;}
-
-    public String getUsuarioCreador() {return usuarioCreador;}
-
-    public void setUsuarioCreador(String usuarioCreador) {this.usuarioCreador = usuarioCreador;}
 }

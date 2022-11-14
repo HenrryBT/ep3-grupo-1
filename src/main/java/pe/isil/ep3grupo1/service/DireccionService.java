@@ -34,7 +34,6 @@ public class DireccionService {
             DireaccionToUpdate.get().setDireccion2(direccion.getDireccion2()!=null? direccion.getDireccion2() :DireaccionToUpdate.get().getDireccion2() );
             DireaccionToUpdate.get().setNroDireccion(direccion.getNroDireccion()!=null? direccion.getNroDireccion():DireaccionToUpdate.get().getNroDireccion());
             DireaccionToUpdate.get().setCiudad(direccion.getCiudad()!=null? direccion.getCiudad():DireaccionToUpdate.get().getCiudad());
-            DireaccionToUpdate.get().setPais(direccion.getPais()!=null? direccion.getPais():DireaccionToUpdate.get().getPais());
             direccionRepository.save(DireaccionToUpdate.get());
         }else{
             throw new RuntimeException("Esta direccion no existe");

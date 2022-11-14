@@ -37,7 +37,7 @@ public class ClienteService {
 
         if(clienteToUpdate.isPresent()){
             clienteToUpdate.get().setNombres(cliente.getNombres()!=null? cliente.getNombres() : clienteToUpdate.get().getNombres());
-            clienteToUpdate.get().setDireccion(cliente.getDireccion()!=null? cliente.getDireccion():clienteToUpdate.get().getDireccion());
+//            clienteToUpdate.get().setDireccion(cliente.getDireccion()!=null? cliente.getDireccion():clienteToUpdate.get().getDireccion());
             clienteToUpdate.get().setApellidos(cliente.getApellidos()!=null? cliente.getApellidos() :clienteToUpdate.get().getApellidos() );
             clienteToUpdate.get().setEmail(cliente.getEmail()!=null? cliente.getEmail():clienteToUpdate.get().getEmail());
             clienteRepository.save(clienteToUpdate.get());

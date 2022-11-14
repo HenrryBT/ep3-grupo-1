@@ -12,8 +12,8 @@ public class Ciudad {
     private String descripcion;
     private Date fechaCreacion;
     private String usuarioCreador;
-    @OneToMany
-    @JoinColumn(name = "")
+    @ManyToOne
+    @JoinColumn(name = "id_direccion")
     private Direccion direccion;
 
     @PostPersist
@@ -52,5 +52,13 @@ public class Ciudad {
 
     public void setUsuarioCreador(String usuarioCreador) {
         this.usuarioCreador = usuarioCreador;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 }
