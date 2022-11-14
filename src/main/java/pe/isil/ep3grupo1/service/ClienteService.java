@@ -2,6 +2,7 @@ package pe.isil.ep3grupo1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.isil.ep3grupo1.entity.Ciudad;
 import pe.isil.ep3grupo1.repository.ClienteRepository;
 import pe.isil.ep3grupo1.entity.Cliente;
 
@@ -30,7 +31,6 @@ public class ClienteService {
             clienteToUpdate.get().setNombres(cliente.getNombres() != null ? cliente.getNombres() : clienteToUpdate.get().getNombres());
             clienteToUpdate.get().setApellidos(cliente.getApellidos() != null ? cliente.getApellidos() : clienteToUpdate.get().getApellidos());
             clienteToUpdate.get().setEmail(cliente.getEmail() != null ? cliente.getEmail() : clienteToUpdate.get().getEmail());
-            clienteToUpdate.get().setDireccion(cliente.getDireccion() != null ? cliente.getDireccion() : clienteToUpdate.get().getDireccion());
             clienteRepository.save(clienteToUpdate.get());
         } else {
             throw new RuntimeException("El Cliente no existe");
@@ -47,8 +47,11 @@ public class ClienteService {
         }
     }
 
-
-    public Cliente buscarClientePorEmail(String email){
+    public Cliente buscarClientePorEmail(String email) {
         return clienteRepository.findClienteByEmail(email);
     }
+
+//    public List<Cliente> buscarClientesPorCiudad(Ciudad ciudad, String descripcion) {
+//        return null;
+//    }
 }

@@ -12,6 +12,9 @@ public class Pais {
     private String descripcion;
     private Date fechaCreacion;
     private String usuarioCreador;
+    @ManyToOne
+    @JoinColumn(name = "id_ciudad")
+    private Ciudad ciudad;
 
     @PostPersist
     public void postPersist() {
