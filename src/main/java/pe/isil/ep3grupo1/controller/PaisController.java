@@ -3,7 +3,7 @@ package pe.isil.ep3grupo1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.isil.ep3grupo1.entity.Pais;
-import pe.isil.ep3grupo1.service.PaisService;
+import pe.isil.ep3grupo1.implementation.PaisServiceImplementation;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/pais")
 public class PaisController {
     @Autowired
-    private PaisService paisService;
+    private PaisServiceImplementation paisService;
 
     @GetMapping({"/getall", ""})
     public List<Pais> getAllPaises() {
