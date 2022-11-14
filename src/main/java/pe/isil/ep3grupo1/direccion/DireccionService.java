@@ -44,7 +44,7 @@ public class DireccionService {
         Optional<Direccion> direccionToDelete = direccionRepository.findById(id);
 
         if(direccionToDelete.isPresent()){
-            direccionRepository.delete(direccionToDelete.get());
+            direccionRepository.deleteById(id);
         }else{
             throw new RuntimeException("Esta direccion no existe");
         }

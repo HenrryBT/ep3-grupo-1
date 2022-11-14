@@ -31,8 +31,8 @@ public class DireccionController {
         return direccionService.getDireccionById(id);
     }
 
-    /*@GetMapping({"/getbyemail",""})
-    public Cliente getClienteByEmail(@RequestParam String email){
-        return clienteService.getClienteByEmail(email);
-    }*/
+    @DeleteMapping("/delete")
+    public void deleteDireccion(@RequestParam Long id){
+        direccionService.delete(id);
+    }
 }
