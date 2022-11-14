@@ -14,38 +14,35 @@ public class DireccionService {
     @Autowired
     private DireccionRepository direccionRepository;
 
-    public List<Direccion> getAll(){
+    public List<Direccion> getAll() {
         return direccionRepository.findAll();
     }
 
-    public Direccion getDireccionById(Long id){
-        return direccionRepository.findById(id).get();
-    }
-    public void add(Direccion direccion){
+    public void add(Direccion direccion) {
         direccionRepository.save(direccion);
     }
 
     @Transactional
-    public void update(Direccion direccion, Long id){
+    public void update(Direccion direccion, Long id) {
         Optional<Direccion> DireaccionToUpdate = direccionRepository.findById(id);
 
-        if(DireaccionToUpdate.isPresent()){
-            DireaccionToUpdate.get().setDireaccion1(direccion.getDireaccion1()!=null? direccion.getDireaccion1() : DireaccionToUpdate.get().getDireaccion1());
-            DireaccionToUpdate.get().setDireccion2(direccion.getDireccion2()!=null? direccion.getDireccion2() :DireaccionToUpdate.get().getDireccion2() );
-            DireaccionToUpdate.get().setNroDireccion(direccion.getNroDireccion()!=null? direccion.getNroDireccion():DireaccionToUpdate.get().getNroDireccion());
-            DireaccionToUpdate.get().setCiudad(direccion.getCiudad()!=null? direccion.getCiudad():DireaccionToUpdate.get().getCiudad());
+        if (DireaccionToUpdate.isPresent()) {
+            DireaccionToUpdate.get().setDireccion1(direccion.getDireccion1() != null ? direccion.getDireccion1() : DireaccionToUpdate.get().getDireccion1());
+            DireaccionToUpdate.get().setDireccion2(direccion.getDireccion2() != null ? direccion.getDireccion2() : DireaccionToUpdate.get().getDireccion2());
+            DireaccionToUpdate.get().setNroDireccion(direccion.getNroDireccion() != null ? direccion.getNroDireccion() : DireaccionToUpdate.get().getNroDireccion());
+            DireaccionToUpdate.get().setCiudad(direccion.getCiudad() != null ? direccion.getCiudad() : DireaccionToUpdate.get().getCiudad());
             direccionRepository.save(DireaccionToUpdate.get());
-        }else{
+        } else {
             throw new RuntimeException("Esta direccion no existe");
         }
     }
 
-    public void delete(Long id){
+    public void delete(Long id) {
         Optional<Direccion> direccionToDelete = direccionRepository.findById(id);
 
-        if(direccionToDelete.isPresent()){
+        if (direccionToDelete.isPresent()) {
             direccionRepository.deleteById(id);
-        }else{
+        } else {
             throw new RuntimeException("Esta direccion no existe");
         }
     }

@@ -9,16 +9,14 @@ public class Direccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String direaccion1;
+    private String direccion1;
     private String direccion2;
     private String nroDireccion;
     private Date fechaCreacion;
     private String usuarioCreador;
-    @Column(name = "id_ciudad")
-    private Ciudad ciudad;
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "id_cuidad", referencedColumnName = "id")
+    private Ciudad ciudad;
 
     @PostPersist
     public void postPersist() {
@@ -34,12 +32,12 @@ public class Direccion {
         this.id = id;
     }
 
-    public String getDireaccion1() {
-        return direaccion1;
+    public String getDireccion1() {
+        return direccion1;
     }
 
-    public void setDireaccion1(String direaccion1) {
-        this.direaccion1 = direaccion1;
+    public void setDireccion1(String direccion1) {
+        this.direccion1 = direccion1;
     }
 
     public String getDireccion2() {
@@ -80,13 +78,5 @@ public class Direccion {
 
     public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 }

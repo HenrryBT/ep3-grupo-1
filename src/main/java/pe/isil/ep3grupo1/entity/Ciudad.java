@@ -13,8 +13,8 @@ public class Ciudad {
     private Date fechaCreacion;
     private String usuarioCreador;
     @ManyToOne
-    @JoinColumn(name = "id_direccion")
-    private Direccion direccion;
+    @JoinColumn(name = "id_pais", referencedColumnName = "id")
+    private Pais pais;
 
     @PostPersist
     public void postPersist() {
@@ -54,11 +54,11 @@ public class Ciudad {
         this.usuarioCreador = usuarioCreador;
     }
 
-    public Direccion getDireccion() {
-        return direccion;
+    public Pais getPais() {
+        return pais;
     }
 
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 }

@@ -10,37 +10,26 @@ import java.util.List;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
-
     @Autowired
     private ClienteService clienteService;
 
+    @GetMapping({"/getall", ""})
+    public List<Cliente> getAllClientes() {
+        return clienteService.getAll();
+    }
+
     @PostMapping("/add")
-    public void addCliente(@RequestBody Cliente cliente){
+    public void addCliente(@RequestBody Cliente cliente) {
         clienteService.add(cliente);
     }
 
     @PostMapping("/update")
-    public void updateCliente(@RequestBody Cliente cliente, @RequestParam Long id){
-        clienteService.update(cliente,id);
-    }
-
-    @GetMapping({"/getall",""})
-    public List<Cliente> getAllItems(){
-        return clienteService.getAll();
-    }
-
-    @GetMapping("/getbyid")
-    public Cliente getItemById(@RequestParam  Long id){
-        return clienteService.getClienteById(id);
-    }
-
-    @GetMapping({"/getbyemail",""})
-    public Cliente getClienteByEmail(@RequestParam String email){
-        return clienteService.getClienteByEmail(email);
+    public void updateCliente(@RequestBody Cliente cliente, @RequestParam Long id) {
+        clienteService.update(cliente, id);
     }
 
     @DeleteMapping("/delete")
-    public void deleteEmail(@RequestParam Long id){
+    public void deleteCliente(@RequestParam Long id) {
         clienteService.delete(id);
     }
 }
