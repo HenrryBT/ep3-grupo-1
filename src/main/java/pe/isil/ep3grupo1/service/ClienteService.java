@@ -46,4 +46,9 @@ public class ClienteService {
             throw new RuntimeException("Cliente no existe");
         }
     }
+
+
+    public Cliente buscarClientePorEmail(String email){
+        return clienteRepository.findClienteByEmail(email);
+    }
 }

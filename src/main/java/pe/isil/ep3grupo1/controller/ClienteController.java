@@ -32,4 +32,9 @@ public class ClienteController {
     public void deleteCliente(@RequestParam Long id) {
         clienteService.delete(id);
     }
+
+    @GetMapping({"/buscarPorEmail",""})
+    public Cliente getClienteByEmail(@RequestParam String email){
+        return clienteService.buscarClientePorEmail(email);
+    }
 }
