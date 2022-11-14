@@ -18,10 +18,6 @@ public class CiudadService {
         return ciudadRepository.findAll();
     }
 
-    public Ciudad getCiudadById(Long id) {
-        return ciudadRepository.findById(id).get();
-    }
-
     public void add(Ciudad ciudad) {
         ciudadRepository.save(ciudad);
     }

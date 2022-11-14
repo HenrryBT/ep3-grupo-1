@@ -14,42 +14,32 @@ public class PaisService {
     @Autowired
     private PaisRepository paisRepository;
 
-    public List<Pais> getAll(){
+    public List<Pais> getAll() {
         return paisRepository.findAll();
     }
-    public Pais getPaisById(Long id){
-        return paisRepository.findById(id).get();
-    }
 
-    public Pais getPaisByName(String name){
-        return paisRepository.findPaisByDescripcion(name);
-    }
-
-    public void add(Pais pais){
+    public void add(Pais pais) {
         paisRepository.save(pais);
     }
 
     @Transactional
-    public void update(Pais pais, Long id){
-
+    public void update(Pais pais, Long id) {
         Optional<Pais> paisToUpdate = paisRepository.findById(id);
 
-        if(paisToUpdate.isPresent()){
-
-            paisToUpdate.get().setDescripcion(pais.getDescripcion()!=null? pais.getDescripcion() : paisToUpdate.get().getDescripcion());
-
-
-        }else{
-            throw new RuntimeException("Pais does not exist");
+        if (paisToUpdate.isPresent()) {
+            paisToUpdate.get().setDescripcion(pais.getDescripcion() != null ? pais.getDescripcion() : paisToUpdate.get().getDescripcion());
+        } else {
+            throw new RuntimeException("Este País no existe");
         }
     }
 
-    public void delete(Long id){
+    public void delete(Long id) {
         Optional<Pais> paisToDelete = paisRepository.findById(id);
-        if(paisToDelete.isPresent()){
+
+        if (paisToDelete.isPresent()) {
             paisRepository.deleteById(id);
-        }else{
-            throw new RuntimeException("Item does not exist");
+        } else {
+            throw new RuntimeException("Este País no existe");
         }
     }
 }
