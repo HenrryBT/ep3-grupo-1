@@ -1,7 +1,9 @@
-package pe.isil.ep3grupo1.pais;
+package pe.isil.ep3grupo1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.isil.ep3grupo1.entity.Pais;
+import pe.isil.ep3grupo1.repository.PaisRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.Optional;
 @Service
 public class PaisService {
     @Autowired
-    private  PaisRepository paisRepository;
+    private PaisRepository paisRepository;
 
     public List<Pais> getAll(){
         return paisRepository.findAll();

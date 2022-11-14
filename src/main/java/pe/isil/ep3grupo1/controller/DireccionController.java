@@ -1,7 +1,9 @@
-package pe.isil.ep3grupo1.direccion;
+package pe.isil.ep3grupo1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.isil.ep3grupo1.entity.Direccion;
+import pe.isil.ep3grupo1.service.DireccionService;
 
 import java.util.List;
 

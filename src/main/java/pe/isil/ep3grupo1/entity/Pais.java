@@ -1,15 +1,14 @@
-package pe.isil.ep3grupo1.ciudad;
+package pe.isil.ep3grupo1.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_Ciudad")
-public class Ciudad {
+@Table(name = "tbl_Pais")
+public class Pais {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String descripcion;
 
     public Long getId() {

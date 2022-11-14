@@ -1,13 +1,10 @@
-package pe.isil.ep3grupo1.cliente;
-
-import pe.isil.ep3grupo1.direccion.Direccion;
+package pe.isil.ep3grupo1.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_Cliente")
+@Table(name = "tbl_cliente")
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
