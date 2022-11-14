@@ -37,7 +37,7 @@ public class ClienteController {
         return clienteService.getClienteByEmail(email);
     }
 
-    @DeleteMapping("/deleteemail")
+    @DeleteMapping("/delete")
     public void deleteEmail(@RequestParam Long id){
         clienteService.delete(id);
     }
