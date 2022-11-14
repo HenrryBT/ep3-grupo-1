@@ -4,9 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "tbl_Pais")
+@Table(name = "tbl_pais")
 public class Pais {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,6 +16,10 @@ public class Pais {
         this.fechaCreacion = new Date();
         this.usuarioCreador = "SYS-USER";
     }
+
+    @OneToMany
+    @JoinColumn(name = "id_cuidad")
+    private Ciudad cuidad;
 
     public Long getId() {
         return id;

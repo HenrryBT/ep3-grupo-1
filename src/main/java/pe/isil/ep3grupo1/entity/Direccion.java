@@ -14,18 +14,18 @@ public class Direccion {
     private String nroDireccion;
     private Date fechaCreacion;
     private String usuarioCreador;
+    @ManyToOne
+    @JoinColumn(name = "id_ciudad")
+    private Ciudad ciudad;
+    @Column(name = "sk_pais")
+    private Pais pais;
+    @OneToMany
+    @JoinColumn(name = "id_cliente")
+    
     public void postPersist() {
         this.fechaCreacion = new Date();
         this.usuarioCreador = "SYS-USER";
     }
-
-    @ManyToOne
-    @JoinColumn(name = "id_ciudad")
-    private Ciudad ciudad;
-
-    @ManyToOne
-    @JoinColumn(name = "id_pais")
-    private Pais pais;
 
     public Long getId() {
         return id;
