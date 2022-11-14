@@ -13,6 +13,7 @@ public class Cliente {
     private Long id;
     private String nombres;
     private String apellidos;
+
     private String email;
     private Date fechaCreacion;
     private String usuarioCreador;
