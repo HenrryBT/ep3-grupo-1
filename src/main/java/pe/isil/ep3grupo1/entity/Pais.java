@@ -12,14 +12,15 @@ public class Pais {
     private String descripcion;
     private Date fechaCreacion;
     private String usuarioCreador;
+    @ManyToOne
+    @JoinColumn(name = "id_cuidad")
+    private Ciudad cuidad;
+
+    @PostPersist
     public void postPersist() {
         this.fechaCreacion = new Date();
         this.usuarioCreador = "SYS-USER";
     }
-
-    @OneToMany
-    @JoinColumn(name = "id_cuidad")
-    private Ciudad cuidad;
 
     public Long getId() {
         return id;
@@ -37,11 +38,19 @@ public class Pais {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaCreacion() {return fechaCreacion;}
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
 
-    public void setFechaCreacion(Date fechaCreacion) {this.fechaCreacion = fechaCreacion;}
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 
-    public String getUsuarioCreador() {return usuarioCreador;}
+    public String getUsuarioCreador() {
+        return usuarioCreador;
+    }
 
-    public void setUsuarioCreador(String usuarioCreador) {this.usuarioCreador = usuarioCreador;}
+    public void setUsuarioCreador(String usuarioCreador) {
+        this.usuarioCreador = usuarioCreador;
+    }
 }
