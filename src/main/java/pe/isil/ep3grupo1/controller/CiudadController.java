@@ -3,7 +3,7 @@ package pe.isil.ep3grupo1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.isil.ep3grupo1.entity.Ciudad;
-import pe.isil.ep3grupo1.service.CiudadService;
+import pe.isil.ep3grupo1.implementation.CiudadServiceImplementation;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/ciudad")
 public class CiudadController {
     @Autowired
-    private CiudadService ciudadService;
+    private CiudadServiceImplementation ciudadService;
 
     @GetMapping({"/getall", ""})
     public List<Ciudad> getAllItems() {
