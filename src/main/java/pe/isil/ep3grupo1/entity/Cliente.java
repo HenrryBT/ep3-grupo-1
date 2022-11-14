@@ -1,6 +1,7 @@
 package pe.isil.ep3grupo1.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_cliente")
@@ -10,6 +11,13 @@ public class Cliente {
     private Long id;
     private String nombres;
     private String apellidos;
+    private Date fechaCreacion;
+    private String usuarioCreador;
+
+    public void postPersist() {
+        this.fechaCreacion = new Date();
+        this.usuarioCreador = "SYS-USER";
+    }
     @Column(unique = true)
     private String email;
     @ManyToOne
@@ -54,5 +62,21 @@ public class Cliente {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getUsuarioCreador() {
+        return usuarioCreador;
+    }
+
+    public void setUsuarioCreador(String usuarioCreador) {
+        this.usuarioCreador = usuarioCreador;
     }
 }

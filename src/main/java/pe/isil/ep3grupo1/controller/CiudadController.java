@@ -22,8 +22,6 @@ public class CiudadController {
     public List<Ciudad> getAllItems(){return  ciudadService.getAll();}
     @GetMapping("/getbyid")
     public Ciudad getCiudadbyId(@RequestParam Long id){return ciudadService.getCiudadById(id);}
-    @GetMapping("getbydesc")
-    public Ciudad getCiudadbyDesc(@RequestParam String descripcion){return  ciudadService.getCiudadByDescripcion(descripcion);}
     @DeleteMapping("/delete")
     public void deleteCiudad(@RequestParam Long id){
         ciudadService.delete(id);
