@@ -57,5 +57,4 @@ public class ClienteServiceImplementation implements ClienteService {
     public Cliente getClienteByEmail(String email) {
         return clienteRepository.findClienteByEmail(email);
     }
-
 }

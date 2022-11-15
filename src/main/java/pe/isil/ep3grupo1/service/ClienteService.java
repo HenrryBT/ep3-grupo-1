@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ClienteService {
     List<Cliente> getAllClientes();
+
     void addClientes(Cliente cliente);
     void updateCliente(Cliente cliente, Long id);
     void deleteCliente(Long id);
