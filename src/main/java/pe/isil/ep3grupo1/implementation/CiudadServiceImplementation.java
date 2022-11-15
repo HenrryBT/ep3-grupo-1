@@ -1,6 +1,7 @@
 package pe.isil.ep3grupo1.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.isil.ep3grupo1.entity.Ciudad;
 import pe.isil.ep3grupo1.repository.CiudadRepository;
 import pe.isil.ep3grupo1.service.CiudadService;
@@ -9,6 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CiudadServiceImplementation implements CiudadService {
     @Autowired
     private CiudadRepository ciudadRepository;

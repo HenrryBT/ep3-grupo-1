@@ -10,5 +10,4 @@ public interface ClienteService {
     void updateCliente(Cliente cliente, Long id);
     void deleteCliente(Long id);
     Cliente getClienteByEmail(String email);
-    Cliente getClienteByCiudad(String descripcion);
 }
