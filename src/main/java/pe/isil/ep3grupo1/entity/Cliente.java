@@ -15,6 +15,10 @@ public class Cliente {
     private String apellidos;
 
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "id_direccion")
+    private Direccion direccion;
     private Date fechaCreacion;
     private String usuarioCreador;
 
@@ -70,5 +74,13 @@ public class Cliente {
 
     public void setUsuarioCreador(String usuarioCreador) {
         this.usuarioCreador = usuarioCreador;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 }
