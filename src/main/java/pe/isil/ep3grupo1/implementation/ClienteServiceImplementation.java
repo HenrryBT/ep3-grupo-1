@@ -58,4 +58,13 @@ public class ClienteServiceImplementation implements ClienteService {
         return clienteRepository.findClienteByEmail(email);
     }
 
+    @Override
+    public List<Cliente> getClienteByCiudad(String descripcion) {
+        return clienteRepository.findClienteByDireccionCiudadDescripcion(descripcion);
+    }
+
+    @Override
+    public List<Cliente> getClienteByPais(String descripcion) {
+        return clienteRepository.findClienteByDireccionPaisDescripcion(descripcion);
+    }
 }

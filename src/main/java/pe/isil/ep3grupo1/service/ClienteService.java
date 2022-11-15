@@ -10,4 +10,6 @@ public interface ClienteService {
     void updateCliente(Cliente cliente, Long id);
     void deleteCliente(Long id);
     Cliente getClienteByEmail(String email);
+    List<Cliente> getClienteByCiudad(String descripcion);
+    List<Cliente> getClienteByPais(String descripcion);
 }

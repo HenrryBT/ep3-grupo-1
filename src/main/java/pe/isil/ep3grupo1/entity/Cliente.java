@@ -13,9 +13,7 @@ public class Cliente {
     private Long id;
     private String nombres;
     private String apellidos;
-
     private String email;
-
     @ManyToOne
     @JoinColumn(name = "id_direccion")
     private Direccion direccion;

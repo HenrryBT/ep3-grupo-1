@@ -38,4 +38,14 @@ public class ClienteController {
         return clienteService.getClienteByEmail(email);
     }
 
+    @GetMapping("/getbyciudad")
+    public List<Cliente> getClienteByCiudad(@RequestParam String descripcion) {
+        return clienteService.getClienteByCiudad(descripcion);
+    }
+
+
+    @GetMapping("/getbypais")
+    public List<Cliente> getClienteByPais(@RequestParam String descripcion) {
+        return clienteService.getClienteByPais(descripcion);
+    }
 }
