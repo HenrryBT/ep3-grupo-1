@@ -37,7 +37,7 @@ public class ClienteServiceImplementation implements ClienteService {
             clienteToUpdate.get().setNombres(cliente.getNombres() != null ? cliente.getNombres() : clienteToUpdate.get().getNombres());
             clienteToUpdate.get().setApellidos(cliente.getApellidos() != null ? cliente.getApellidos() : clienteToUpdate.get().getApellidos());
             clienteToUpdate.get().setEmail(cliente.getEmail() != null ? cliente.getEmail() : clienteToUpdate.get().getEmail());
-            clienteToUpdate.get().setDireccion(cliente.getDireccion()!=null? cliente.getDireccion():clienteToUpdate.get().getDireccion());
+            clienteToUpdate.get().setDireccion(cliente.getDireccion() != null ? cliente.getDireccion() : clienteToUpdate.get().getDireccion());
             clienteRepository.save(clienteToUpdate.get());
         } else {
             throw new RuntimeException("El Cliente no existe");
